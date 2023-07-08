@@ -1,23 +1,40 @@
-<h1 class="text-3xl font-bold underline">
-  Hello World!
-</h1>
-
-<h2>List of Countries</h2>
-<div class="wrapper w-3/4 flex justify-center">
-    <Grid data={countries} 
-        {columns}
-        sort
-        search
-        fixedHeader
-    />
+<div class="font-mono">
+    <div class="flex items-center justify-center">
+        <p class="font-mono">List of Countries</p>
+    </div>
+    <div class="flex items-center justify-center">
+        <div class = "wrapper w-3/4 h-3/4 ">
+            <Grid data={countries} 
+                {columns}
+                sort
+                search
+                {className}
+                fixedHeader
+                resizable
+                height="600px"
+            />
+        </div>
+    </div>
+    <div class="flex items-center justify-center">
+        <div class = "wrapper h-1/4 pt-4">
+            <button class="bg-sky-500 p-5 text-white rounded-full hover:bg-sky-700">
+                Generate JSON
+            </button>              
+        </div>
+    </div>
 </div>
 
 <script>
 import Grid from "gridjs-svelte";
-import { html } from "gridjs"
+import { html, h } from "gridjs"
 import "gridjs/dist/theme/mermaid.css";
 
 let columns = [
+    {
+        name: "Checkbox",
+        id: "code",
+        formatter: (cell) => html(`<input type="checkbox" class="rounded" value='${cell}'/>`)
+    },
     {
         name: "ISO Code",
         id: "code"
@@ -33,9 +50,13 @@ let columns = [
     {
         name: "Country Outline",
         id: "outline",
-        formatter: (cell) => html(`<img src='${cell}'/>`)
+        formatter: (cell) => html(`<img class="h-36 object-center" src='${cell}'/>`)
     }
 ]
+
+let className = {
+    td: 'h-2'
+}
 
 let countries = [
     {
@@ -49,6 +70,18 @@ let countries = [
         "name": "United Kingdom",
         "capital": "London",
         "outline": "../../outlines/GB.png"
+    },
+    {
+        "code": "AU",
+        "name": "Australia",
+        "capital": "Canberra",
+        "outline": "../../outlines/AU.png"
+    },
+    {
+        "code": "CA",
+        "name": "Canada",
+        "capital": "Ottawa",
+        "outline": "../../outlines/CA.png"
     }
 ];
 
