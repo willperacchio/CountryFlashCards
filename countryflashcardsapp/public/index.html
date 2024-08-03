@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		
+		<link href="./_app/immutable/assets/0.27eb01b5.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.a6a8dbd9.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.5b82043f.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.6350f723.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.17328e14.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.0b94f46c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.621f6b92.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.57b9d160.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.562a48df.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="font-mono"><div class="flex items-center justify-center" data-svelte-h="svelte-1vb0neu"><p class="font-mono">List of Countries</p></div> <div class="flex items-center justify-center"><div class="wrapper w-3/4 h-3/4 "><article></article></div></div> <div class="flex items-center justify-center" data-svelte-h="svelte-1bll2vw"><div class="wrapper h-1/4 pt-4"><button class="bg-sky-500 p-5 text-white rounded-full hover:bg-sky-700">Generate JSON</button></div></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_13xrn2o = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.5b82043f.js"),
+						import("./_app/immutable/entry/app.0b94f46c.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
